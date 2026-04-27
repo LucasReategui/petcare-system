@@ -3,6 +3,12 @@ const cors = require('cors');
 require('dotenv').config();
 const { sequelize } = require('./src/models');
 const authRoutes = require('./src/routes/authRoutes');
+const clienteRoutes = require('./src/routes/clienteRoutes');
+const mascotaRoutes = require('./src/routes/mascotaRoutes');
+const citaRoutes = require('./src/routes/citaRoutes');
+const veterinarioRoutes = require('./src/routes/veterinarioRoutes');
+const historiaRoutes = require('./src/routes/historiaRoutes');
+const usuarioRoutes = require('./src/routes/usuarioRoutes');
 
 const app = express();
 
@@ -11,6 +17,12 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/auth', authRoutes);
+app.use('/api/clientes', clienteRoutes);
+app.use('/api/mascotas', mascotaRoutes);
+app.use('/api/citas', citaRoutes);
+app.use('/api/veterinarios', veterinarioRoutes);
+app.use('/api/historias', historiaRoutes);
+app.use('/api/usuarios', usuarioRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
